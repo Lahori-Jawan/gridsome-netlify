@@ -5,22 +5,30 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'Nasir Khan Blogs',
+  siteDescription: 'A minimal site for blogging, powered by Gridsome.',
+  siteUrl: 'https://gridsome-netlify-cms-test.netlify.app/',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'blog/**/*.md',
         typeName: 'Post',
-        remark: {
-          // remark options
-        },
+        remark: {},
       },
     },
   ],
   transformers: {
     remark: {
-      // global remark options
+      plugins: [
+        [
+          'gridsome-plugin-remark-shiki',
+          { theme: 'material-theme-palenight', skipInline: true },
+        ],
+      ],
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      anchorClassName: 'icon icon-link',
     },
   },
 };
