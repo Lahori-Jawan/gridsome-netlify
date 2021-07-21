@@ -10,6 +10,7 @@ description: There are many repetitive tasks that come in the life of a
   loop over this array via <code>for</code> loop or some Higher Order Function
   i.e. <code>filter</code> to filter out the data as we need.
 repo-link: https://www.npmjs.com/package/vue-markdown
+link: https://github.com/markedjs/marked
 date: 2021-07-21T18:03:51.501Z
 ---
 There are many repetitive tasks that come in the life of a developer & one such task is dealing with arrays. Arrays unlike `Number`, `Boolean`, `String` are not pure data type meaning they don’t represent real data rather they act as a container to hold a list of data. For example when we make http call to `/users` endpoint, it returns a list of **users** contained in a container i.e. Array. We can then loop over this array via `for` loop or some Higher Order Function i.e. `filter` to filter out the data as we need.
