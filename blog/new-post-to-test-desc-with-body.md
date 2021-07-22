@@ -24,18 +24,38 @@ Lets start!
 `map` and `forEach` are the two most commonly confused array methods ever since we came to know about them. There is no doubt that both these methods can be used interchangeably if you just need to transform the data i.e.
 
 ```javascript
-// returns promises array
-const promises = [1,2,3].map(async (i) => {
-  await setInterval(() => {}, 100);
-  console.log(i);
-});
-await Promise.all(promises)
-console.log("Prints last");
-// result
-1
-2
-3
-Prints last
+<template>
+  <div id="app">
+    <h1>My Todo App!</h1>
+    <TodoList/>
+  </div>
+</template>
+
+<script>
+import TodoList from './components/TodoList.vue'
+
+export default {
+  components: {
+    TodoList
+  }
+}
+</script>
+
+<style lang="scss">
+#app {
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.4;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $vue-blue;
+
+  h1 {
+    text-align: center;
+  }
+}
+</style>
 ```
 
 There is no real difference b/w the two but there is one striking use case where `map` always can be used and not `forEach` and that is `async` operations. You cannot `await` an async call inside forEach i.e.
